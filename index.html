@@ -1,4 +1,5 @@
- // this whole code is chatgpt... i'm an ee not a stinky cs kid
+<!-- //this whole code is chatgpt, i'm an ee not a stinky cs student -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,7 +159,7 @@
 
 
 <audio id="laugh" preload="auto">
-    <source src="cat-laugh-meme-1.mp3" type="audio/mpeg">
+    <source src="cat-laugh.mp3" type="audio/mpeg">
 </audio>
 
 
@@ -169,10 +170,9 @@
     const status = document.getElementById("status");
     const laugh = document.getElementById("laugh");
 
-
     button.addEventListener("click", () => {
 
-        // Play the laughing sound
+        // Play the cat laugh
         laugh.currentTime = 0;
         laugh.volume = 1.0;
 
@@ -180,24 +180,19 @@
             console.log("Audio playback failed:", error);
         });
 
-
-        // Change fake connection button
+        // Change the fake connection button
         button.textContent = "Connected";
         button.disabled = true;
-
         button.style.background = "#16803c";
         button.style.cursor = "default";
-
 
         // Show connected status
         status.style.display = "block";
 
-
         // Reveal the troll
         troll.style.display = "block";
 
-
-        // Scroll down slightly on smaller phone screens
+        // Scroll toward the meme on smaller screens
         setTimeout(() => {
             troll.scrollIntoView({
                 behavior: "smooth",
