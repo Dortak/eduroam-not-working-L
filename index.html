@@ -100,8 +100,16 @@
             color: #444;
         }
 
-        .expiration {
+        .speed {
             margin-top: 20px;
+            padding: 14px;
+            background: #eef5ff;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .expiration {
+            margin-top: 18px;
             padding: 13px;
             background: #fff3cd;
             border-radius: 8px;
@@ -110,11 +118,13 @@
             line-height: 1.4;
         }
 
-        .small {
-            margin-top: 25px;
-            font-size: 0.85rem;
-            color: #888;
-            line-height: 1.4;
+        .disclaimer {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid #ddd;
+            font-size: 0.78rem;
+            color: #777;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -124,6 +134,7 @@
 <div class="card">
 
     <div id="intro">
+
         <h1>Emergency Internet Access</h1>
 
         <div class="description">
@@ -138,6 +149,7 @@
         <div id="status">
             ✓ Connected
         </div>
+
     </div>
 
 
@@ -150,17 +162,23 @@
         <img src="cat.gif" alt="laughing cat">
 
         <div class="wifi-info">
-            anyway yes the internet actually works<br><br>
+            alright yeah, the internet actually works.<br><br>
 
-            <strong>5 Mbps download</strong><br>
-            <strong>5 Mbps upload</strong><br><br>
-
-            enough for school stuff, messaging, email, maps,
-            and basic browsing.<br><br>
-
-            please go back to eduroam when it stops tweaking
-            instead of making this your permanent doom-scrolling network
+            use it if you need it and please go back to eduroam
+            when it stops tweaking.
         </div>
+
+
+        <div class="speed">
+            <strong>Temporary connection limits</strong><br><br>
+
+            ↓ 5 Mbps download<br>
+            ↑ 5 Mbps upload<br><br>
+
+            Enough for school stuff, messaging, email,
+            maps, and basic browsing.
+        </div>
+
 
         <div class="expiration">
             Guest access expires after 1 hour.<br>
@@ -170,8 +188,13 @@
     </div>
 
 
-    <div class="small">
-        No Purdue or eduroam passwords are requested or collected.<br>
+    <div class="disclaimer">
+        By using this Wi-Fi, you accept responsibility for your own internet activity.
+        The network owner is not responsible for websites, downloads, malware,
+        data loss, account compromise, legal issues, device problems, or other
+        issues resulting from your use of this connection.
+        <br><br>
+        No Purdue or eduroam passwords are requested or collected.
         This is an independently operated guest network and is not an official Purdue service.
     </div>
 
@@ -199,17 +222,17 @@
             console.log("Audio playback failed:", error);
         });
 
-        // Make the fake connection look successful
+        // Fake successful connection
         button.textContent = "Connected";
         button.disabled = true;
         button.style.background = "#16803c";
 
         status.style.display = "block";
 
-        // Reveal the actual page
+        // Reveal the troll
         troll.style.display = "block";
 
-        // Bring the meme into view on smaller screens
+        // Scroll toward the meme on smaller screens
         setTimeout(() => {
             troll.scrollIntoView({
                 behavior: "smooth",
