@@ -1,4 +1,4 @@
-<!-- this whole code is chatgpt, i'm an ee not a stinky cs student -->
+<!-- //this whole code is chatgpt, i'm an ee not a stinky cs student -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Internet Access</title>
+    <title>Emergency Internet Access</title>
 
     <style>
         * {
@@ -66,39 +66,55 @@
             transform: scale(0.98);
         }
 
+        .connect-button:disabled {
+            cursor: default;
+        }
+
+        #status {
+            display: none;
+            margin-top: 18px;
+            font-weight: bold;
+            color: #16803c;
+        }
+
         #troll {
             display: none;
-            margin-top: 25px;
+            margin-top: 28px;
+        }
+
+        #troll h2 {
+            font-size: 1.9rem;
+            margin-bottom: 10px;
         }
 
         #troll img {
             width: 100%;
             max-width: 420px;
             border-radius: 12px;
-        }
-
-        #troll h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
+            margin-top: 10px;
         }
 
         .wifi-info {
-            margin-top: 20px;
+            margin-top: 22px;
             line-height: 1.6;
             color: #444;
+        }
+
+        .expiration {
+            margin-top: 20px;
+            padding: 13px;
+            background: #fff3cd;
+            border-radius: 8px;
+            color: #664d03;
+            font-weight: bold;
+            line-height: 1.4;
         }
 
         .small {
             margin-top: 25px;
             font-size: 0.85rem;
             color: #888;
-        }
-
-        #status {
-            margin-top: 18px;
-            font-weight: bold;
-            color: #16803c;
-            display: none;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -108,12 +124,10 @@
 <div class="card">
 
     <div id="intro">
-
         <h1>Emergency Internet Access</h1>
 
         <div class="description">
             eduroam ain't working?<br><br>
-
             You can temporarily use this Wi-Fi connection.
         </div>
 
@@ -124,7 +138,6 @@
         <div id="status">
             ✓ Connected
         </div>
-
     </div>
 
 
@@ -137,22 +150,29 @@
         <img src="cat.gif" alt="laughing cat">
 
         <div class="wifi-info">
-
             anyway yes the internet actually works<br><br>
 
-            <strong>10 Mbps download</strong><br>
+            <strong>5 Mbps download</strong><br>
             <strong>5 Mbps upload</strong><br><br>
 
-            use it if you need it and go back to eduroam
-            when it stops tweaking
+            enough for school stuff, messaging, email, maps,
+            and basic browsing.<br><br>
 
+            please go back to eduroam when it stops tweaking
+            instead of making this your permanent doom-scrolling network
+        </div>
+
+        <div class="expiration">
+            Guest access expires after 1 hour.<br>
+            This is emergency Wi-Fi, not your new home.
         </div>
 
     </div>
 
 
     <div class="small">
-        No Purdue or eduroam passwords are requested or collected.
+        No Purdue or eduroam passwords are requested or collected.<br>
+        This is an independently operated guest network and is not an official Purdue service.
     </div>
 
 </div>
@@ -164,7 +184,6 @@
 
 
 <script>
-
     const button = document.getElementById("connectButton");
     const troll = document.getElementById("troll");
     const status = document.getElementById("status");
@@ -180,28 +199,24 @@
             console.log("Audio playback failed:", error);
         });
 
-        // Change the fake connection button
+        // Make the fake connection look successful
         button.textContent = "Connected";
         button.disabled = true;
         button.style.background = "#16803c";
-        button.style.cursor = "default";
 
-        // Show connected status
         status.style.display = "block";
 
-        // Reveal the troll
+        // Reveal the actual page
         troll.style.display = "block";
 
-        // Scroll toward the meme on smaller screens
+        // Bring the meme into view on smaller screens
         setTimeout(() => {
             troll.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
             });
         }, 250);
-
     });
-
 </script>
 
 </body>
